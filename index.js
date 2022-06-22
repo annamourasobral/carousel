@@ -6,9 +6,15 @@ document.getElementById('carousel-button-next').addEventListener('click', moveTo
 document.getElementById('carousel-button-prev').addEventListener('click', moveToPrevSlide);
 
 function moveToNextSlide() {
-    console.log('moving to the next slide!');
+    if (slidePosition === totalSlides - 1) {
+        slidePosition = 0;
+    } else {
+        slidePosition++;
+    }
+    
+    slides[slidePosition].classList.add("carousel-item-visible");
 }
 
 function moveToPrevSlide() {
-    console.log('moving to the prev slide!');    
+    
 }
