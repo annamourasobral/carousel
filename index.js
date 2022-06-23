@@ -25,5 +25,13 @@ function moveToNextSlide() {
 }
 
 function moveToPrevSlide() {
+    hideAllSlides();
     
+    if (slidePosition === 0) {
+        slidePosition = totalSlides - 1;
+    } else {
+        slidePosition--;
+    }
+    
+    slides[slidePosition].classList.add("carousel-item-visible");
 }
